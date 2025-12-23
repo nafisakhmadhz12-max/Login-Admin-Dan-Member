@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Multi-Login System</title>
+    <!-- Import Font & Icons -->
+    <link href="fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-circles">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <!-- Container Login -->
+    <div class="glass-card" id="loginPage">
+        <div class="header">
+            <h2>Welcome Back</h2>
+            <p>Please enter your details</p>
+        </div>
+        <form id="loginForm">
+            <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" id="username" placeholder="Username" required>
+            </div>
+            <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn-main">Sign In</button>
+            <p id="msg" class="message"></p>
+        </form>
+    </div>
+
+    <!-- Panel Admin -->
+    <div class="glass-card wide" id="adminPage" style="display:none;">
+        <div class="header-admin">
+            <h2><i class="fas fa-user-shield"></i> Admin Dashboard</h2>
+            <button onclick="logout()" class="btn-logout-small">Logout</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Member Name</th>
+                        <th>Secret Key (Password)</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="userTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Panel Member -->
+    <div class="glass-card" id="memberPage" style="display:none;">
+        <div class="welcome-box">
+            <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h2>Hello, <span id="userDisplay"></span>!</h2>
+            <p>You are logged in as a <strong>Member</strong>.</p>
+            <button onclick="logout()" class="btn-main btn-danger">Sign Out</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
